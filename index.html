@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Application Mail Sorter</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<main class="wrap">
+  <h1>Application mail sorter</h1>
+  <p class="sub">Connect Gmail and every job email is sorted by what it says.</p>
+
+  <div class="bar">
+    <button id="connect" class="btn">Connect Gmail</button>
+    <button id="demo" class="btn alt">Try demo emails</button>
+    <input id="query" value="newer_than:90d" aria-label="Gmail search filter" title="Gmail search filter">
+    <select id="count" aria-label="How many emails">
+      <option value="50">Last 50</option><option value="100" selected>Last 100</option><option value="200">Last 200</option>
+    </select>
+  </div>
+
+  <div id="banner" class="banner" role="status">Connect Gmail to start. Your emails are read in your browser only.</div>
+  <div id="chips" class="chips" role="group" aria-label="Filter by label"></div>
+
+  <div class="grid">
+    <section class="panel"><h2>Inbox</h2><div id="list"><p class="empty">Nothing loaded yet.</p></div></section>
+    <section class="panel"><h2>Opened email</h2><div id="viewer"><p class="empty">Open an email to see its label.</p></div></section>
+  </div>
+</main>
+<script src="config.js"></script>
+<script src="app.js"></script>
+<script src="https://accounts.google.com/gsi/client" async defer></script>
+</body>
+</html>
